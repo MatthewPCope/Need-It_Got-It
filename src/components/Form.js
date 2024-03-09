@@ -8,21 +8,29 @@ export default function Form() {
     const [ newItem, setNewItem] = useState('')
     const { user } = useAuthContext()
 
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
         e.preventDefault()
 
+        await addDoc(collection(db, 'needs'), {
+            name: newItem,
+            uid: user.uid
+        })
+        setNewItem('')
     }
 
     return (
         <>
-            <form onSubmit={submitHandler} className="form">
+            <form onSubmit={submitHandler} className="">
                 <div className="form-group">
-                    <labe className='form-label'>
-                        <span>Enter Item:</span>
+                    <label className='form-label text-center'>
+                        What do you Need?
                         <input type="text"
                         required
-                        className="form-control"/>
-                    </labe>
+                        className="form-control"
+                        value={newItem}
+                        onChange={(e) => setNewItem(e.target.value)}/>
+                    </label>
+                    <button className="">Add</button>
                 </div>
             </form>
         </>
