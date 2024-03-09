@@ -14,7 +14,7 @@ const addItem = (item) => {
 };
 
 return (
-    <div>
+    <div className='form'>
     <div>
         <h2>Need It</h2>
         <ul>
