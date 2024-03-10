@@ -1,6 +1,6 @@
 import  { useCollection } from '../hooks/useCollection'
 import ItemList from '../components/ItemList'
-
+import GotList from '../components/GotList'
 import { useAuthContext } from '../hooks/useAuthContext'
 
 
@@ -19,7 +19,7 @@ export default function Home() {
         <div className="container">
             {error && <p>{error}</p>}
         {needs && <ItemList needs={needs} />}
-        {needs && <ItemList needs={needs} />}
+        {needs && <GotList needs={needs} />}
         </div>
     );
 }
