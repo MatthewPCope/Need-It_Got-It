@@ -53,12 +53,16 @@ body {
   } */
   nav li {
     display: inline-block;
+    
     margin: 0 0 0 16px;
     cursor: pointer;
   }
   nav a {
     color: #fff;
     text-decoration: none;
+  }
+  li{
+    justify-content: space-around;
   }
   /* .navform{
     justify-content: center;
